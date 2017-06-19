@@ -5,7 +5,9 @@ A cross-platform (iOS / Android), selector/picker component for React Native tha
 
 ## Demo
 
-<img src="https://raw.githubusercontent.com/d-a-n/react-native-modal-picker/master/docs/demo.gif" />
+<img src="https://raw.githubusercontent.com/jaspal747/react-native-modal-picker/master/docs/demo.gif" />
+<img src="https://raw.githubusercontent.com/jaspal747/react-native-modal-picker/master/docs/screen-with-close-icon.png" />
+
 
 ## Install
 
