@@ -28,10 +28,12 @@ const propTypes = {
     selectStyle: View.propTypes.style,
     optionStyle: View.propTypes.style,
     optionTextStyle: Text.propTypes.style,
+    optionContainerStyle: View.propTypes.style,
     sectionStyle: View.propTypes.style,
     sectionTextStyle: Text.propTypes.style,
     cancelStyle: View.propTypes.style,
     cancelTextStyle: Text.propTypes.style,
+    closeButtonStyle: View.propTypes.style,
     overlayStyle: View.propTypes.style,
     cancelText: PropTypes.string
 };
@@ -44,10 +46,12 @@ const defaultProps = {
     selectStyle: {},
     optionStyle: {},
     optionTextStyle: {},
+    optionContainerStyle: {},
     sectionStyle: {},
     sectionTextStyle: {},
     cancelStyle: {},
     cancelTextStyle: {},
+    closeButtonStyle: {},
     overlayStyle: {},
     cancelText: 'cancel'
 };
@@ -130,13 +134,23 @@ export default class ModalPicker extends BaseComponent {
 
         return (
             <View style={[styles.overlayStyle, this.props.overlayStyle]} key={'modalPicker'+(componentIndex++)}>
-                <View style={styles.optionContainer}>
+                
+                {this.props.closeButtonIcon && 
+                    <TouchableOpacity onPress={this.close}>
+                        <View style={[styles.closeButtonStyle, this.props.closeButtonStyle]}>
+                            { this.props.closeButtonIcon }
+                        </View>
+                    </TouchableOpacity>
+                }
+
+                <View style={[styles.optionContainer, this.props.optionContainerStyle]}>
                     <ScrollView keyboardShouldPersistTaps='always'>
                         <View style={{paddingHorizontal:10}}>
                             {options}
                         </View>
                     </ScrollView>
                 </View>
+            
                 <View style={styles.cancelContainer}>
                     <TouchableOpacity onPress={this.close}>
                         <View style={[styles.cancelStyle, this.props.cancelStyle]}>
@@ -144,6 +158,7 @@ export default class ModalPicker extends BaseComponent {
                         </View>
                     </TouchableOpacity>
                 </View>
+            
 
             </View>);
     }
@@ -164,7 +179,7 @@ export default class ModalPicker extends BaseComponent {
 
         const dp = (
           <Modal transparent={true} ref="modal" visible={this.state.modalVisible} onRequestClose={this.close} animationType={this.state.animationType}>
-          {this.renderOptionList()}
+            {this.renderOptionList()}
           </Modal>
         );
 

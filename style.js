@@ -32,6 +32,12 @@ export default StyleSheet.create({
         top:(height-OPTION_CONTAINER_HEIGHT)/2 + 10
     },
 
+    closeButtonStyle: {
+        left: 20,
+        top: 25,
+        position: 'absolute',   
+    },
+
     selectStyle: {
         flex: 1,
         borderColor: '#ccc',

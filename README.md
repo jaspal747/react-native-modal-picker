@@ -94,6 +94,9 @@ class SampleApp extends Component {
 * `sectionStyle - object` optional, style definitions for the section element
 * `sectionTextStyle - object` optional, style definitions for the select text element
 * `optionStyle - object` optional, style definitions for the option element
+* `optionContainerStyle - object` optional, style definitions for the option container element (This is the white box containing the options)
 * `optionTextStyle - object` optional, style definitions for the option text element
 * `cancelStyle - object` optional, style definitions for the cancel element
 * `cancelTextStyle - object` optional, style definitions for the cancel text element
+* `closeButtonIcon - object` optional, Icon (react-native-vector-icons) or any other component that you would like to place on the top Left corner of the modal. Tpically you can use a close icon here.
+* `closeButtonStyle - object` optional, style definitions for the closeButtonIcon element
